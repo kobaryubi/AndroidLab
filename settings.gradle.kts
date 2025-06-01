@@ -1,5 +1,5 @@
-//pluginManagement {
-//    repositories {
+pluginManagement {
+    repositories {
 //        google {
 //            content {
 //                includeGroupByRegex("com\\.android.*")
@@ -7,10 +7,10 @@
 //                includeGroupByRegex("androidx.*")
 //            }
 //        }
-//        mavenCentral()
+        mavenCentral()
 //        gradlePluginPortal()
-//    }
-//}
+    }
+}
 //dependencyResolutionManagement {
 //    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 //    repositories {
