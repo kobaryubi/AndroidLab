@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-//    namespace = "com.masahikokobayashi.androidlab"
+    namespace = "com.masahikokobayashi.androidlab"
     compileSdk = 34
 
     defaultConfig {
