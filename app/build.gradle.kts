@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.masahikokobayashi.androidlab"
+//    namespace = "com.masahikokobayashi.androidlab"
     compileSdk = 34
 
     defaultConfig {
         applicationId = "com.masahikokobayashi.androidlab"
-        minSdk = 29
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+//        minSdk = 29
+//        targetSdk = 34
+//        versionCode = 1
+//        versionName = "1.0"
 
 //        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 //        vectorDrawables {
@@ -20,16 +20,16 @@ android {
 //        }
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
+//    buildTypes {
+//        release {
+//            isMinifyEnabled = true
+//            isShrinkResources = true
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro"
+//            )
+//        }
+//    }
 //    compileOptions {
 //        sourceCompatibility = JavaVersion.VERSION_1_8
 //        targetCompatibility = JavaVersion.VERSION_1_8
@@ -51,7 +51,6 @@ android {
 }
 
 //dependencies {
-//
 //    implementation(libs.androidx.core.ktx)
 //    implementation(libs.androidx.lifecycle.runtime.ktx)
 //    implementation(libs.androidx.activity.compose)
