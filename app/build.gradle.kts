@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId = "com.masahikokobayashi.androidlab"
-//        minSdk = 29
-//        targetSdk = 34
-//        versionCode = 1
-//        versionName = "1.0"
+        minSdk = 29
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
 
 //        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 //        vectorDrawables {
