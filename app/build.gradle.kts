@@ -37,9 +37,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-//    buildFeatures {
-//        compose = true
-//    }
+    buildFeatures {
+        compose = true
+    }
 //    composeOptions {
 //        kotlinCompilerExtensionVersion = "1.5.1"
 //    }
@@ -50,7 +50,7 @@ android {
 //    }
 }
 
-//dependencies {
+dependencies {
 //    implementation(libs.androidx.core.ktx)
 //    implementation(libs.androidx.lifecycle.runtime.ktx)
 //    implementation(libs.androidx.activity.compose)
@@ -66,4 +66,4 @@ android {
 //    androidTestImplementation(libs.androidx.ui.test.junit4)
 //    debugImplementation(libs.androidx.ui.tooling)
 //    debugImplementation(libs.androidx.ui.test.manifest)
-//}
+}
