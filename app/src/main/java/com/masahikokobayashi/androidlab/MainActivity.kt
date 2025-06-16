@@ -3,6 +3,8 @@ package com.masahikokobayashi.androidlab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -38,7 +40,16 @@ fun GreetingPreview() {
 }
 
 @Composable
-fun BusinessCard(modifier: Modifier = Modifier) {}
+fun BusinessCard(modifier: Modifier = Modifier) {
+    Column {
+        Column {}
+        Column {
+            Row {}
+            Row {}
+            Row {}
+        }
+    }
+}
 
 @Preview
 @Composable
