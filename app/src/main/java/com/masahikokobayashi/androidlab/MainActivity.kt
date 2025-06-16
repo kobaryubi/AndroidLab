@@ -41,7 +41,9 @@ fun GreetingPreview() {
 
 @Composable
 fun BusinessCard(modifier: Modifier = Modifier) {
-    Column {
+    Column(
+        modifier = modifier
+    ) {
         Column {}
         Column {
             Row {}
