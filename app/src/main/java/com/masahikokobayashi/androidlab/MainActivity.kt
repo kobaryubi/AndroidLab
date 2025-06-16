@@ -36,3 +36,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() {
     Greeting("Meghan")
 }
+
+@Composable
+fun BusinessCard(modifier: Modifier = Modifier) {}
+
+@Preview
+@Composable
+fun BusinessCardPreview() {
+    BusinessCard()
+}
