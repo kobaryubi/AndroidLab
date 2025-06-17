@@ -30,6 +30,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         Text(
             text = "Hello $name!",
             fontSize = 100.sp,
+            lineHeight = 116.sp,
             modifier = modifier.padding(24.dp)
         )
     }
