@@ -20,17 +20,21 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
+import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 
 class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-            Greeting(
-                name = "Android",
-                from = "from Emma",
-                modifier = Modifier.padding(8.dp)
-            )
+
+            AndroidLabTheme {
+                Greeting(
+                    name = "Android",
+                    from = "from Emma",
+                    modifier = Modifier.padding(8.dp)
+                )
+            }
         }
     }
 }
