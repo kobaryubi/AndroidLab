@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -58,10 +59,12 @@ fun Greeting(name: String, from: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
-    Image(
-        painter = image,
-        contentDescription = null,
-    )
+    Box (modifier) {
+        Image(
+            painter = image,
+            contentDescription = null,
+        )
+    }
 }
 
 @Preview
@@ -70,6 +73,15 @@ fun GreetingPreview() {
     Greeting(
         name = "Meghan",
         from = "from Emma",
+    )
+}
+
+@Preview
+@Composable
+fun GreetingImagePreview() {
+    GreetingImage(
+        message = "Happy Birthday Sam!",
+        from = "From Emma"
     )
 }
 
