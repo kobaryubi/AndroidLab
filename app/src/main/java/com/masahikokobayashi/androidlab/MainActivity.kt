@@ -29,10 +29,9 @@ class MainActivity: ComponentActivity() {
             val navController = rememberNavController()
 
             AndroidLabTheme {
-                Greeting(
-                    name = "Android",
-                    from = "from Emma",
-                    modifier = Modifier.padding(8.dp)
+                GreetingImage(
+                    message = "Happy Birthday Sam!",
+                    from = "From Emma",
                 )
             }
         }
@@ -82,11 +81,13 @@ fun GreetingPreview() {
 
 @Preview
 @Composable
-fun GreetingImagePreview() {
-    GreetingImage(
-        message = "Happy Birthday Sam!",
-        from = "From Emma"
-    )
+fun AndroidLabPreview() {
+    AndroidLabTheme {
+        GreetingImage(
+            message = "Happy Birthday Sam!",
+            from = "From Emma",
+        )
+    }
 }
 
 @Composable
