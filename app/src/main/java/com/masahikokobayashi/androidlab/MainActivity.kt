@@ -32,12 +32,11 @@ class MainActivity: ComponentActivity() {
 @Composable
 fun Greeting(name: String, from: String, modifier: Modifier = Modifier) {
     Surface(color = Color.Cyan) {
-        Row {
+        Column(modifier = modifier.padding(24.dp)) {
             Text(
                 text = "Hello $name!",
                 fontSize = 100.sp,
                 lineHeight = 116.sp,
-                modifier = modifier.padding(24.dp)
             )
             Text(
                 text = from,
