@@ -53,6 +53,9 @@ fun Greeting(name: String, from: String, modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {}
+
 @Preview
 @Composable
 fun GreetingPreview() {
