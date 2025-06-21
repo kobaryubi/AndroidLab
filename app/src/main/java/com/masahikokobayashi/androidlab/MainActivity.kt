@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
@@ -24,7 +25,7 @@ class MainActivity: ComponentActivity() {
             val navController = rememberNavController()
             Greeting(
                 name = "Android",
-                from = "from Jetpack Compose",
+                from = "from Emma",
             )
         }
     }
@@ -42,7 +43,10 @@ fun Greeting(name: String, from: String, modifier: Modifier = Modifier) {
             )
             Text(
                 text = from,
-                fontSize = 36.sp
+                fontSize = 36.sp,
+                modifier = Modifier
+                    .padding(16.dp)
+                    .align(alignment = Alignment.End)
             )
         }
     }
@@ -53,7 +57,7 @@ fun Greeting(name: String, from: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() {
     Greeting(
         name = "Meghan",
-        from = "from Jetpack Compose",
+        from = "from Emma",
     )
 }
 
