@@ -21,13 +21,16 @@ class MainActivity: ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-            Greeting("Android")
+            Greeting(
+                name = "Android",
+                from = "from Jetpack Compose",
+            )
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(name: String, from: String, modifier: Modifier = Modifier) {
     Surface(color = Color.Cyan) {
         Text(
             text = "Hello $name!",
@@ -35,13 +38,20 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             lineHeight = 116.sp,
             modifier = modifier.padding(24.dp)
         )
+        Text(
+            text = from,
+            fontSize = 36.sp
+        )
     }
 }
 
 @Preview
 @Composable
 fun GreetingPreview() {
-    Greeting("Meghan")
+    Greeting(
+        name = "Meghan",
+        from = "from Jetpack Compose",
+    )
 }
 
 @Composable
