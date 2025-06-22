@@ -31,12 +31,24 @@ class MainActivity: ComponentActivity() {
             val navController = rememberNavController()
 
             AndroidLabTheme {
-                GreetingImage(
-                    message = stringResource(R.string.happy_birthday_text),
-                    from = stringResource(R.string.signature_text),
-                )
+                JetpackComposeTutorial()
             }
         }
+    }
+}
+
+@Composable
+fun JetpackComposeTutorial(modifier: Modifier = Modifier) {
+    val image = painterResource(id = R.drawable.bg_compose_background)
+
+    Column(
+        modifier = modifier
+    ) {
+        Image(
+            painter = image,
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth,
+        )
     }
 }
 
@@ -92,6 +104,12 @@ fun AndroidLabPreview() {
             from = stringResource(R.string.signature_text),
         )
     }
+}
+
+@Preview
+@Composable
+fun JetpackComposeTutorialPreview() {
+    JetpackComposeTutorial()
 }
 
 @Composable
