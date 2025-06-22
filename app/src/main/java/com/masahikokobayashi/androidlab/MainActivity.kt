@@ -46,6 +46,9 @@ class MainActivity: ComponentActivity() {
 }
 
 @Composable
+fun TaskCompleted() {}
+
+@Composable
 fun JetpackComposeTutorial(
     title: String,
     shortDescription: String,
@@ -134,6 +137,14 @@ fun JetpackComposeTutorialPreview() {
             longDescription = stringResource(R.string.compose_long_desc),
             imagePainter = painterResource(R.drawable.bg_compose_background),
         )
+    }
+}
+
+@Preview
+@Composable
+fun TaskCompletedPreview() {
+    AndroidLabTheme {
+        TaskCompleted()
     }
 }
 
