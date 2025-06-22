@@ -124,6 +124,19 @@ fun AndroidLabPreview() {
     }
 }
 
+@Preview
+@Composable
+fun JetpackComposeTutorialPreview() {
+    AndroidLabTheme {
+        JetpackComposeTutorial(
+            title = stringResource(R.string.title_jetpack_compose_tutorial),
+            shortDescription = stringResource(R.string.compose_short_desc),
+            longDescription = stringResource(R.string.compose_long_desc),
+            imagePainter = painterResource(R.drawable.bg_compose_background),
+        )
+    }
+}
+
 @Composable
 fun BusinessCard(modifier: Modifier = Modifier) {
     Column(
