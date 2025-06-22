@@ -51,6 +51,19 @@ fun JetpackComposeTutorial(modifier: Modifier = Modifier) {
             contentDescription = null,
             contentScale = ContentScale.FillWidth,
         )
+        Text(
+            text = "Jetpack Compose tutorial",
+            fontSize = 24.sp,
+            modifier = Modifier.padding(16.dp)
+        )
+        Text(
+            text = "Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.",
+            textAlign = TextAlign.Justify,
+            modifier = Modifier.padding(
+                start = 16.dp,
+                end = 16.dp
+            )
+        )
     }
 }
 
