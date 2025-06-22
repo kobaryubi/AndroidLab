@@ -115,15 +115,6 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
 
 @Preview
 @Composable
-fun GreetingPreview() {
-    Greeting(
-        name = "Meghan",
-        from = "from Emma",
-    )
-}
-
-@Preview
-@Composable
 fun AndroidLabPreview() {
     AndroidLabTheme {
         GreetingImage(
