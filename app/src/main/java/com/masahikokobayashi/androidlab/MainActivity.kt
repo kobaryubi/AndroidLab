@@ -45,8 +45,10 @@ class MainActivity: ComponentActivity() {
 }
 
 @Composable
-fun DiceWithButtonAndImage() {
-
+fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
+    Column (
+        modifier = modifier,
+    ) {}
 }
 
 @Composable
