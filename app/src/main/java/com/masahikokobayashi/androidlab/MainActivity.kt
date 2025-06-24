@@ -38,11 +38,7 @@ class MainActivity: ComponentActivity() {
             val navController = rememberNavController()
 
             AndroidLabTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize()
-                ) {
-                    TaskCompleted()
-                }
+                DiceWithButtonAndImage()
             }
         }
     }
@@ -221,8 +217,9 @@ fun BusinessCard(modifier: Modifier = Modifier) {
 fun BusinessCardPreview() {
     BusinessCard()
 }
+
 @Preview
 @Composable
-fun DiceRollerApp() {
-
+fun DiceRollerAppPreview() {
+    DiceWithButtonAndImage()
 }
