@@ -5,9 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -20,6 +23,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -35,19 +39,43 @@ class MainActivity: ComponentActivity() {
             val navController = rememberNavController()
 
             AndroidLabTheme {
-                JetpackComposeTutorial(
-                    title = stringResource(R.string.title_jetpack_compose_tutorial),
-                    shortDescription = stringResource(R.string.compose_short_desc),
-                    longDescription = stringResource(R.string.compose_long_desc),
-                    imagePainter = painterResource(R.drawable.bg_compose_background),
-                )
+                TaskCompleted()
             }
         }
     }
 }
 
 @Composable
-fun TaskCompleted() {}
+fun TaskCompleted(
+    modifier: Modifier = Modifier
+) {
+    val painter = painterResource(R.drawable.ic_task_completed)
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+    ) {
+        Image(
+            painter = painter,
+            contentDescription = null,
+        )
+        Text(
+            text = stringResource(R.string.all_task_completed),
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(
+                top = 24.dp,
+                bottom = 8.dp,
+            )
+        )
+        Text(
+            text = stringResource(R.string.nice_work),
+            fontSize = 16.sp,
+        )
+    }
+}
 
 @Composable
 fun JetpackComposeTutorial(
