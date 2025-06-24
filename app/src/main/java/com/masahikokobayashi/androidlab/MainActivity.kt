@@ -49,6 +49,11 @@ class MainActivity: ComponentActivity() {
 }
 
 @Composable
+fun DiceWithButtonAndImage() {
+
+}
+
+@Composable
 fun TaskCompleted(
     modifier: Modifier = Modifier
 ) {
@@ -215,4 +220,9 @@ fun BusinessCard(modifier: Modifier = Modifier) {
 @Composable
 fun BusinessCardPreview() {
     BusinessCard()
+}
+@Preview
+@Composable
+fun DiceRollerApp() {
+
 }
