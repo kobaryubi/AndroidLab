@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -116,6 +117,17 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
     }
 }
 
+@Composable
+fun SearchBar(
+    modifier: Modifier = Modifier
+) {
+    TextField(
+        value = "",
+        onValueChange = {},
+        modifier = modifier,
+    )
+}
+
 @Preview
 @Composable
 fun AndroidLabPreview() {
@@ -145,6 +157,14 @@ fun JetpackComposeTutorialPreview() {
 fun TaskCompletedPreview() {
     AndroidLabTheme {
         TaskCompleted()
+    }
+}
+
+@Preview
+@Composable
+fun SearchBarPreview() {
+    AndroidLabTheme {
+        SearchBar()
     }
 }
 
