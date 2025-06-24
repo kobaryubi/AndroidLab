@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -38,7 +40,11 @@ class MainActivity: ComponentActivity() {
             val navController = rememberNavController()
 
             AndroidLabTheme {
-                DiceWithButtonAndImage()
+                DiceWithButtonAndImage(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .wrapContentSize()
+                )
             }
         }
     }
@@ -47,8 +53,17 @@ class MainActivity: ComponentActivity() {
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
     Column (
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier,
-    ) {}
+    ) {
+        Image(
+            painter = painterResource(R.drawable.dice_1),
+            contentDescription = "1"
+        )
+        Button(onClick = { /*TODO*/ }) {
+            Text(stringResource(R.string.roll))
+        }
+    }
 }
 
 @Composable
