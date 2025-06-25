@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -190,6 +191,21 @@ fun SearchBar(
         onValueChange = {},
         modifier = modifier,
     )
+}
+
+@Composable
+fun LemonApp() {
+    Scaffold() { innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)) {}
+    }
+}
+
+@Preview
+@Composable
+fun LemonAppPreview() {
+    AndroidLabTheme {
+        LemonApp()
+    }
 }
 
 @Preview
