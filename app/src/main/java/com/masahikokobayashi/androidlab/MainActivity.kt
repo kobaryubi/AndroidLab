@@ -180,17 +180,6 @@ fun SearchBar(
 
 @Preview
 @Composable
-fun AndroidLabPreview() {
-    AndroidLabTheme {
-        GreetingImage(
-            message = stringResource(R.string.happy_birthday_text),
-            from = stringResource(R.string.signature_text),
-        )
-    }
-}
-
-@Preview
-@Composable
 fun JetpackComposeTutorialPreview() {
     AndroidLabTheme {
         JetpackComposeTutorial(
