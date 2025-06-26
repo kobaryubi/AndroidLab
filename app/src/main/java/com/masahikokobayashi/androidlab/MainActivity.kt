@@ -205,11 +205,11 @@ fun LemonApp() {
             Button(onClick = {}) {
                 Image(
                     painter = image,
-                    contentDescription = "Lemon tree"
+                    contentDescription = stringResource(R.string.lemon_tree_content_description)
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
-            Text("Tap the lemon tree to select a lemon")
+            Text(stringResource(R.string.lemon_select))
         }
     }
 }

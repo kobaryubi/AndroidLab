@@ -9,4 +9,6 @@
     <string name="all_task_completed">All tasks completed</string>
     <string name="nice_work">Nice work!</string>
     <string name="roll">Roll</string>
+    <string name="lemon_tree_content_description">Lemon tree</string>
+    <string name="lemon_select">Tap the lemon tree to select a lemon</string>
 </resources>
