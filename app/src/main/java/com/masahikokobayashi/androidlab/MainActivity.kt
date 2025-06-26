@@ -192,6 +192,7 @@ fun SearchBar(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LemonApp() {
+    var step by remember { mutableIntStateOf(1) }
     val image = painterResource(R.drawable.lemon_tree)
 
     Scaffold(
@@ -202,14 +203,48 @@ fun LemonApp() {
         }
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
-            Button(onClick = {}) {
-                Image(
-                    painter = image,
-                    contentDescription = stringResource(R.string.lemon_tree_content_description)
-                )
+            when (step) {
+                1 -> {
+                    Button(onClick = { step = 2 }) {
+                        Image(
+                            painter = image,
+                            contentDescription = stringResource(R.string.lemon_tree_content_description)
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(stringResource(R.string.lemon_select))
+                }
+                2 -> {
+                    Button(onClick = { step = 3}) {
+                        Image(
+                            painter = painterResource(R.drawable.lemon_squeeze),
+                            contentDescription = stringResource(R.string.lemon_content_description)
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(stringResource(R.string.lemon_squeeze))
+                }
+                3 -> {
+                    Button(onClick = { step = 4 }) {
+                        Image(
+                            painter = painterResource(R.drawable.lemon_drink),
+                            contentDescription = stringResource(R.string.lemonade_content_description)
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(stringResource(R.string.lemon_drink))
+                }
+                4 -> {
+                    Button(onClick = { step = 1 }) {
+                        Image(
+                            painter = painterResource(R.drawable.lemon_restart),
+                            contentDescription = stringResource(R.string.empty_glass_content_description)
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(stringResource(R.string.lemon_empty_glass))
+                }
             }
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(stringResource(R.string.lemon_select))
         }
     }
 }
