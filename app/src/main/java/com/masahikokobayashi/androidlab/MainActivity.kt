@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -46,13 +48,7 @@ class MainActivity: ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            AndroidLabTheme {
-                DiceWithButtonAndImage(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .wrapContentSize()
-                )
-            }
+            LemonApp()
         }
     }
 }
@@ -193,10 +189,28 @@ fun SearchBar(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LemonApp() {
-    Scaffold() { innerPadding ->
-        Column(modifier = Modifier.padding(innerPadding)) {}
+    val image = painterResource(R.drawable.lemon_tree)
+
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(title = {
+                Text("Lemonade")
+            })
+        }
+    ) { innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)) {
+            Button(onClick = {}) {
+                Image(
+                    painter = image,
+                    contentDescription = "Lemon tree"
+                )
+            }
+            Spacer(modifier = Modifier.height(16.dp))
+            Text("Tap the lemon tree to select a lemon")
+        }
     }
 }
 
@@ -260,5 +274,11 @@ fun BusinessCardPreview() {
 @Preview
 @Composable
 fun DiceRollerAppPreview() {
-    DiceWithButtonAndImage()
+    AndroidLabTheme {
+        DiceWithButtonAndImage(
+            modifier = Modifier
+                .fillMaxSize()
+                .wrapContentSize()
+        )
+    }
 }
