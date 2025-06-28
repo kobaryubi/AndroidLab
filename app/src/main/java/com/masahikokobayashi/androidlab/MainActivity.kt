@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
+import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
 
 class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +49,9 @@ class MainActivity: ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            LemonApp()
+            LemonadeTheme {
+                LemonApp()
+            }
         }
     }
 }
@@ -261,7 +264,7 @@ fun LemonApp() {
 @Preview
 @Composable
 fun LemonAppPreview() {
-    AndroidLabTheme {
+    LemonadeTheme {
         LemonApp()
     }
 }

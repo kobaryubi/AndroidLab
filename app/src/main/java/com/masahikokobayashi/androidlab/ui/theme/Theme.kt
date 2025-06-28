@@ -11,3 +11,12 @@ fun AndroidLabTheme(
         content = content
     )
 }
+
+@Composable
+fun LemonadeTheme(
+    content: @Composable () -> Unit
+) {
+    MaterialTheme(
+        content = content
+    )
+}
