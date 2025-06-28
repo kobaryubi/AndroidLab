@@ -202,47 +202,56 @@ fun LemonApp() {
             })
         }
     ) { innerPadding ->
-        Column(modifier = Modifier.padding(innerPadding)) {
-            when (step) {
-                1 -> {
-                    Button(onClick = { step = 2 }) {
-                        Image(
-                            painter = image,
-                            contentDescription = stringResource(R.string.lemon_tree_content_description)
-                        )
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
+            ) {
+                when (step) {
+                    1 -> {
+                        Button(onClick = { step = 2 }) {
+                            Image(
+                                painter = image,
+                                contentDescription = stringResource(R.string.lemon_tree_content_description)
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(stringResource(R.string.lemon_select))
                     }
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Text(stringResource(R.string.lemon_select))
-                }
-                2 -> {
-                    Button(onClick = { step = 3}) {
-                        Image(
-                            painter = painterResource(R.drawable.lemon_squeeze),
-                            contentDescription = stringResource(R.string.lemon_content_description)
-                        )
+                    2 -> {
+                        Button(onClick = { step = 3}) {
+                            Image(
+                                painter = painterResource(R.drawable.lemon_squeeze),
+                                contentDescription = stringResource(R.string.lemon_content_description)
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(stringResource(R.string.lemon_squeeze))
                     }
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Text(stringResource(R.string.lemon_squeeze))
-                }
-                3 -> {
-                    Button(onClick = { step = 4 }) {
-                        Image(
-                            painter = painterResource(R.drawable.lemon_drink),
-                            contentDescription = stringResource(R.string.lemonade_content_description)
-                        )
+                    3 -> {
+                        Button(onClick = { step = 4 }) {
+                            Image(
+                                painter = painterResource(R.drawable.lemon_drink),
+                                contentDescription = stringResource(R.string.lemonade_content_description)
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(stringResource(R.string.lemon_drink))
                     }
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Text(stringResource(R.string.lemon_drink))
-                }
-                4 -> {
-                    Button(onClick = { step = 1 }) {
-                        Image(
-                            painter = painterResource(R.drawable.lemon_restart),
-                            contentDescription = stringResource(R.string.empty_glass_content_description)
-                        )
+                    4 -> {
+                        Button(onClick = { step = 1 }) {
+                            Image(
+                                painter = painterResource(R.drawable.lemon_restart),
+                                contentDescription = stringResource(R.string.empty_glass_content_description)
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(stringResource(R.string.lemon_empty_glass))
                     }
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Text(stringResource(R.string.lemon_empty_glass))
                 }
             }
         }
