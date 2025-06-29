@@ -196,7 +196,6 @@ fun SearchBar(
 @Composable
 fun LemonApp() {
     var step by remember { mutableIntStateOf(1) }
-    val image = painterResource(R.drawable.lemon_tree)
 
     Scaffold(
         topBar = {
@@ -218,7 +217,7 @@ fun LemonApp() {
                     1 -> {
                         Button(onClick = { step = 2 }) {
                             Image(
-                                painter = image,
+                                painter = painterResource(R.drawable.lemon_tree),
                                 contentDescription = stringResource(R.string.lemon_tree_content_description)
                             )
                         }
