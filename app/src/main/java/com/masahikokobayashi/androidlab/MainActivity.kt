@@ -209,51 +209,38 @@ fun LemonApp() {
                 .fillMaxSize()
                 .padding(innerPadding),
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                when (step) {
-                    1 -> {
-                        Button(onClick = { step = 2 }) {
-                            Image(
-                                painter = painterResource(R.drawable.lemon_tree),
-                                contentDescription = stringResource(R.string.lemon_tree_content_description)
-                            )
-                        }
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(stringResource(R.string.lemon_select))
-                    }
-                    2 -> {
-                        Button(onClick = { step = 3}) {
-                            Image(
-                                painter = painterResource(R.drawable.lemon_squeeze),
-                                contentDescription = stringResource(R.string.lemon_content_description)
-                            )
-                        }
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(stringResource(R.string.lemon_squeeze))
-                    }
-                    3 -> {
-                        Button(onClick = { step = 4 }) {
-                            Image(
-                                painter = painterResource(R.drawable.lemon_drink),
-                                contentDescription = stringResource(R.string.lemonade_content_description)
-                            )
-                        }
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(stringResource(R.string.lemon_drink))
-                    }
-                    4 -> {
-                        Button(onClick = { step = 1 }) {
-                            Image(
-                                painter = painterResource(R.drawable.lemon_restart),
-                                contentDescription = stringResource(R.string.empty_glass_content_description)
-                            )
-                        }
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(stringResource(R.string.lemon_empty_glass))
-                    }
+            when (step) {
+                1 -> {
+                    LemonTextAndImage(
+                        textLabelResourceId = R.string.lemon_select,
+                        drawableResourceId = R.drawable.lemon_tree,
+                        contentDescriptionResourceId = R.string.lemon_tree_content_description,
+                        onImageClick = { step = 2 }
+                    )
+                }
+                2 -> {
+                    LemonTextAndImage(
+                        textLabelResourceId = R.string.lemon_squeeze,
+                        drawableResourceId = R.drawable.lemon_squeeze,
+                        contentDescriptionResourceId = R.string.lemon_content_description,
+                        onImageClick = { step = 3 }
+                    )
+                }
+                3 -> {
+                    LemonTextAndImage(
+                        textLabelResourceId = R.string.lemon_drink,
+                        drawableResourceId = R.drawable.lemon_drink,
+                        contentDescriptionResourceId = R.string.lemonade_content_description,
+                        onImageClick = { step = 4 }
+                    )
+                }
+                4 -> {
+                    LemonTextAndImage(
+                        textLabelResourceId = R.string.lemon_empty_glass,
+                        drawableResourceId = R.drawable.lemon_restart,
+                        contentDescriptionResourceId = R.string.empty_glass_content_description,
+                        onImageClick = { step = 1 },
+                    )
                 }
             }
         }
