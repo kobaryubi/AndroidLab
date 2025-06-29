@@ -196,6 +196,8 @@ fun SearchBar(
 @Composable
 fun LemonApp() {
     var step by remember { mutableIntStateOf(1) }
+    var squeezeCount by remember { mutableIntStateOf(0) }
+    var squeezeLimit by remember { mutableIntStateOf((2..4).random()) }
 
     Scaffold(
         topBar = {
@@ -223,7 +225,15 @@ fun LemonApp() {
                         textLabelResourceId = R.string.lemon_squeeze,
                         drawableResourceId = R.drawable.lemon_squeeze,
                         contentDescriptionResourceId = R.string.lemon_content_description,
-                        onImageClick = { step = 3 }
+                        onImageClick = {
+                            squeezeCount++
+
+                            if (squeezeCount >= squeezeLimit) {
+                                squeezeCount = 0
+                                squeezeLimit = (2..4).random()
+                                step = 3
+                            }
+                        }
                     )
                 }
                 3 -> {
