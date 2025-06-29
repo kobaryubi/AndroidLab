@@ -201,9 +201,14 @@ fun LemonApp() {
 
     Scaffold(
         topBar = {
-            CenterAlignedTopAppBar(title = {
-                Text("Lemonade")
-            })
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(
+                        text = "Lemonade",
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            )
         }
     ) { innerPadding ->
         Surface(
