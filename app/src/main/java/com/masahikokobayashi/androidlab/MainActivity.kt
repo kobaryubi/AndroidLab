@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -200,7 +199,6 @@ fun SearchBar(
 fun LemonApp() {
     var step by remember { mutableIntStateOf(1) }
     var squeezeCount by remember { mutableIntStateOf(0) }
-    var squeezeLimit by remember { mutableIntStateOf((2..4).random()) }
 
     Scaffold(
         topBar = {
@@ -221,7 +219,6 @@ fun LemonApp() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .background(MaterialTheme.colorScheme.tertiaryContainer),
         ) {
             when (step) {
                 1 -> {
@@ -229,7 +226,10 @@ fun LemonApp() {
                         textLabelResourceId = R.string.lemon_select,
                         drawableResourceId = R.drawable.lemon_tree,
                         contentDescriptionResourceId = R.string.lemon_tree_content_description,
-                        onImageClick = { step = 2 }
+                        onImageClick = {
+                            step = 2
+                            squeezeCount = (2..4).random()
+                        }
                     )
                 }
                 2 -> {
@@ -238,11 +238,9 @@ fun LemonApp() {
                         drawableResourceId = R.drawable.lemon_squeeze,
                         contentDescriptionResourceId = R.string.lemon_content_description,
                         onImageClick = {
-                            squeezeCount++
+                            squeezeCount--
 
-                            if (squeezeCount >= squeezeLimit) {
-                                squeezeCount = 0
-                                squeezeLimit = (2..4).random()
+                            if (squeezeCount == 0) {
                                 step = 3
                             }
                         }
