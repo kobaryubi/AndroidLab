@@ -56,6 +56,7 @@ class MainActivity: ComponentActivity() {
                     TipTimeLayout(
                         modifier = Modifier
                             .statusBarsPadding()
+                            .padding(horizontal = 40.dp)
                     )
                 }
             }
