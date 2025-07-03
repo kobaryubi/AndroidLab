@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
+import com.masahikokobayashi.androidlab.ui.theme.TipTimeTheme
 
 class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,8 +52,12 @@ class MainActivity: ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            LemonadeTheme {
-                LemonApp()
+            TipTimeTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    TipTimeLayout()
+                }
             }
         }
     }
