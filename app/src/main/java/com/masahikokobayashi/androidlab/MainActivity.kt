@@ -9,13 +9,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material3.Button
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -63,33 +59,6 @@ class MainActivity: ComponentActivity() {
                     )
                 }
             }
-        }
-    }
-}
-
-@Composable
-fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
-    var result by remember { mutableIntStateOf(1) }
-    val imageResource = when (result) {
-        1 -> R.drawable.dice_1
-        2 -> R.drawable.dice_2
-        3 -> R.drawable.dice_3
-        4 -> R.drawable.dice_4
-        5 -> R.drawable.dice_5
-        else -> R.drawable.dice_6
-    }
-
-    Column (
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier,
-    ) {
-        Image(
-            painter = painterResource(imageResource),
-            contentDescription = result.toString()
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { result = (1..6).random() }) {
-            Text(stringResource(R.string.roll))
         }
     }
 }
@@ -331,16 +300,4 @@ fun BusinessCard(modifier: Modifier = Modifier) {
 @Composable
 fun BusinessCardPreview() {
     BusinessCard()
-}
-
-@Preview
-@Composable
-fun DiceRollerAppPreview() {
-    AndroidLabTheme {
-        DiceWithButtonAndImage(
-            modifier = Modifier
-                .fillMaxSize()
-                .wrapContentSize()
-        )
-    }
 }
