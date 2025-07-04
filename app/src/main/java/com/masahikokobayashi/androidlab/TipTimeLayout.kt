@@ -2,7 +2,9 @@ package com.masahikokobayashi.androidlab
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -34,6 +36,7 @@ fun TipTimeLayout(
             text = stringResource(id = R.string.tip_amount, "$0.00"),
             style = MaterialTheme.typography.displaySmall,
         )
+        Spacer(modifier = Modifier.height(150.dp))
     }
 }
 
