@@ -8,6 +8,7 @@ fun TipTimeTheme(
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
+        typography = TipTimeTypography,
         content = content
     )
 }
