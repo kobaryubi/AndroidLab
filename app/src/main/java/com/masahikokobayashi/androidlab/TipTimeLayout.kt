@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,6 +29,10 @@ fun TipTimeLayout(
             modifier = Modifier
                 .padding(top = 40.dp, bottom = 16.dp)
                 .align(alignment = Alignment.Start)
+        )
+        Text(
+            text = stringResource(id = R.string.tip_amount, "$0.00"),
+            style = MaterialTheme.typography.displaySmall,
         )
     }
 }

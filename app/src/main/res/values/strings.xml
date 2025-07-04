@@ -18,4 +18,5 @@
     <string name="lemon_drink">Tap the lemonade to drink it</string>
     <string name="lemon_empty_glass">Tap the empty glass to start again</string>
     <string name="calculate_tip">Calculate Tip</string>
+    <string name="tip_amount">Tip Amount: %s</string>
 </resources>
