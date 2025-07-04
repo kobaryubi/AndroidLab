@@ -24,7 +24,10 @@ fun TipTimeLayout(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = stringResource(R.string.calculate_tip)
+            text = stringResource(R.string.calculate_tip),
+            modifier = Modifier
+                .padding(top = 40.dp, bottom = 16.dp)
+                .align(alignment = Alignment.Start)
         )
     }
 }
