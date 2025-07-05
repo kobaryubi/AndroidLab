@@ -123,6 +123,7 @@ fun RoundTheTipRow(
     modifier: Modifier = Modifier
 ) {
     Row(
+        horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier.height(48.dp)
     ) {
