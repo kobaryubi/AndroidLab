@@ -88,7 +88,7 @@ fun TipTimeLayout(
         RoundTheTipRow(
             roundUp = roundUp,
             onRoundUpChange = { roundUp = it },
-            modifier = Modifier.padding(bottom = 32.dp)
+            modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth()
         )
         Text(
             text = stringResource(id = R.string.tip_amount, tip),
@@ -122,7 +122,10 @@ fun RoundTheTipRow(
     onRoundUpChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Row(modifier = modifier) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier.height(48.dp)
+    ) {
         Text(text = stringResource(R.string.round_up_tip))
         Switch(
             checked = roundUp,
