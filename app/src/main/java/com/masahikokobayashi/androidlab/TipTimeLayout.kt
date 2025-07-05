@@ -61,7 +61,7 @@ fun TipTimeLayout(
             modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth()
         )
         Text(
-            text = stringResource(id = R.string.tip_amount, "$0.00"),
+            text = stringResource(id = R.string.tip_amount, tip),
             style = MaterialTheme.typography.displaySmall,
         )
         Spacer(modifier = Modifier.height(150.dp))
