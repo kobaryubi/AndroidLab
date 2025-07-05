@@ -24,11 +24,26 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.masahikokobayashi.androidlab.ui.theme.TipTimeTheme
+import java.text.NumberFormat
+
+/**
+ * Calculates the tip based on the user input and format the tip amount
+ * according to the local currency.
+ * Example would be "$10.00".
+ */
+private fun calculateTip(amount: Double, tipPercent: Double = 15.0): String {
+    val tip = tipPercent / 100 * amount
+    return NumberFormat.getCurrencyInstance().format(tip)
+}
 
 @Composable
 fun TipTimeLayout(
     modifier: Modifier = Modifier
 ) {
+    var amountInput by remember { mutableStateOf("") }
+    val amount = amountInput.toDoubleOrNull() ?: 0.0
+    val tip = calculateTip(amount)
+
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
