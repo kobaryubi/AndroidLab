@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -50,6 +51,8 @@ fun TipTimeLayout(
     val tipPercent = tipInput.toDoubleOrNull() ?: 0.0
 
     val tip = calculateTip(amount, tipPercent)
+    
+    var roundUp by remember { mutableStateOf(false) }
 
     Column(
         modifier = modifier,
@@ -81,6 +84,11 @@ fun TipTimeLayout(
             value = tipInput,
             onValueChange = { tipInput = it },
             modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth()
+        )
+        RoundTheTipRow(
+            roundUp = roundUp,
+            onRoundUpChange = { roundUp = it },
+            modifier = Modifier.padding(bottom = 32.dp)
         )
         Text(
             text = stringResource(id = R.string.tip_amount, tip),
@@ -114,7 +122,13 @@ fun RoundTheTipRow(
     onRoundUpChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Row {}
+    Row(modifier = modifier) {
+        Text(text = stringResource(R.string.round_up_tip))
+        Switch(
+            checked = roundUp,
+            onCheckedChange = onRoundUpChange,
+        )
+    }
 }
 
 @Preview
