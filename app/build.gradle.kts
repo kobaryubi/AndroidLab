@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.plugin.compose)
     alias(libs.plugins.google.dagger.hilt.android)
+    alias(libs.plugins.google.devtools.ksp)
 }
 
 android {
@@ -53,6 +54,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.com.google.dagger.hilt.android)
+    ksp(libs.com.google.dagger.hilt.android.compiler)
     debugImplementation(libs.androidx.ui.tooling)
     testImplementation(libs.junit)
 }
