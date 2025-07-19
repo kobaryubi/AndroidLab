@@ -46,6 +46,8 @@ class MainActivity: ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
+
+            AffirmationsApp()
         }
     }
 }

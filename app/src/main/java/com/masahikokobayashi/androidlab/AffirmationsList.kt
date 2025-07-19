@@ -9,7 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun AffirmationList(
+fun AffirmationsList(
     affirmationList: List<Affirmation>
     , modifier: Modifier = Modifier) {
     LazyColumn(modifier = modifier) {
