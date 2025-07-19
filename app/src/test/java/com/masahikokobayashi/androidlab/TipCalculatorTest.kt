@@ -1,3 +1,8 @@
 package com.masahikokobayashi.androidlab
 
-class TipCalculatorTest {}
+import org.junit.Test
+
+class TipCalculatorTest {
+    @Test
+    fun calculateTip_20PercentNoRoundup() {}
+}
