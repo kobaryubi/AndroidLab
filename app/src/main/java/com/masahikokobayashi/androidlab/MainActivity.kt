@@ -11,9 +11,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawingPadding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -42,7 +39,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
-import com.masahikokobayashi.androidlab.ui.theme.TipTimeTheme
 
 class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,19 +46,6 @@ class MainActivity: ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-
-            TipTimeTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize()
-                ) {
-                    TipTimeLayout(
-                        modifier = Modifier
-                            .safeDrawingPadding()
-                            .padding(horizontal = 40.dp)
-                            .verticalScroll(rememberScrollState()),
-                    )
-                }
-            }
         }
     }
 }
