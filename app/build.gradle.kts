@@ -57,4 +57,5 @@ dependencies {
     ksp(libs.com.google.dagger.hilt.android.compiler)
     debugImplementation(libs.androidx.ui.tooling)
     testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
 }
