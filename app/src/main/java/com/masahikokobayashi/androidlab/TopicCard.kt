@@ -6,14 +6,17 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,18 +34,15 @@ fun TopicCard(
             Image(
                 painter = painterResource(topic.imageResourceId),
                 contentDescription = stringResource(topic.stringResourceId),
-                modifier = Modifier
-                    .width(68.dp)
-                    .height(68.dp),
+                modifier = Modifier.size(68.dp),
                 contentScale = ContentScale.Crop
             )
             Column(
-                modifier = Modifier
-                    .padding(
-                        start = 16.dp,
-                        top = 16.dp,
-                        end = 16.dp,
-                    )
+                modifier = Modifier.padding(
+                    start = dimensionResource(R.dimen.padding_medium),
+                    top = dimensionResource(R.dimen.padding_medium),
+                    end = dimensionResource(R.dimen.padding_medium),
+                )
             ) {
                 Text(
                     text = stringResource(topic.stringResourceId),
@@ -52,11 +52,11 @@ fun TopicCard(
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Image(
+                    Icon(
                         painter = painterResource(R.drawable.ic_grain),
                         contentDescription = null,
                     )
-                    Spacer(modifier = Modifier.width(8.dp))
+                    Spacer(modifier = Modifier.width(dimensionResource(R.dimen.padding_small)))
                     Text(
                         text = topic.availableCourses.toString(),
                         style = MaterialTheme.typography.labelMedium,
@@ -71,5 +71,8 @@ fun TopicCard(
 @Composable
 private fun TopicCardPreview() {
     val topic = Datasource.topics[0]
-    TopicCard(topic)
+
+    MaterialTheme {
+        TopicCard(topic = topic)
+    }
 }

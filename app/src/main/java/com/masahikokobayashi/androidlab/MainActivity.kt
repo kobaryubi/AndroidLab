@@ -41,15 +41,22 @@ import androidx.navigation.compose.rememberNavController
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
 
-class MainActivity: ComponentActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
 
-            Surface(modifier = Modifier.fillMaxSize().statusBarsPadding().padding(8.dp)) {
-                CoursesApp()
+            MaterialTheme {
+                Surface(
+                    color = MaterialTheme.colorScheme.background,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .statusBarsPadding()
+                ) {
+                    CoursesApp()
+                }
             }
         }
     }
@@ -102,14 +109,12 @@ fun JetpackComposeTutorial(
             contentScale = ContentScale.FillWidth,
         )
         Text(
-            text = title,
-            fontSize = 24.sp,
-            modifier = Modifier.padding(16.dp)
+            text = title, fontSize = 24.sp, modifier = Modifier.padding(16.dp)
         )
         Text(
             text = shortDescription,
             textAlign = TextAlign.Justify,
-            modifier = Modifier.padding(start = 16.dp,  end = 16.dp)
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp)
         )
         Text(
             text = longDescription,
@@ -143,7 +148,7 @@ fun Greeting(name: String, from: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
-    Box (modifier) {
+    Box(modifier) {
         Image(
             painter = image,
             contentDescription = null,
@@ -170,21 +175,17 @@ fun LemonApp() {
     var step by remember { mutableIntStateOf(1) }
     var squeezeCount by remember { mutableIntStateOf(0) }
 
-    Scaffold(
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(
-                        text = "Lemonade",
-                        fontWeight = FontWeight.Bold
-                    )
-                },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer
+    Scaffold(topBar = {
+        CenterAlignedTopAppBar(
+            title = {
+                Text(
+                    text = "Lemonade", fontWeight = FontWeight.Bold
                 )
+            }, colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                containerColor = MaterialTheme.colorScheme.primaryContainer
             )
-        }
-    ) { innerPadding ->
+        )
+    }) { innerPadding ->
         Surface(
             modifier = Modifier
                 .fillMaxSize()
@@ -199,9 +200,9 @@ fun LemonApp() {
                         onImageClick = {
                             step = 2
                             squeezeCount = (2..4).random()
-                        }
-                    )
+                        })
                 }
+
                 2 -> {
                     LemonTextAndImage(
                         textLabelResourceId = R.string.lemon_squeeze,
@@ -213,17 +214,17 @@ fun LemonApp() {
                             if (squeezeCount == 0) {
                                 step = 3
                             }
-                        }
-                    )
+                        })
                 }
+
                 3 -> {
                     LemonTextAndImage(
                         textLabelResourceId = R.string.lemon_drink,
                         drawableResourceId = R.drawable.lemon_drink,
                         contentDescriptionResourceId = R.string.lemonade_content_description,
-                        onImageClick = { step = 4 }
-                    )
+                        onImageClick = { step = 4 })
                 }
+
                 4 -> {
                     LemonTextAndImage(
                         textLabelResourceId = R.string.lemon_empty_glass,
