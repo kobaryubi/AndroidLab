@@ -30,7 +30,7 @@ fun AffirmationsApp() {
             ),
     ) {
         AffirmationsList(
-            affirmationList = Datasource().loadAffirmations(),
+            affirmationList = Datasource.loadAffirmations(),
         )
     }
 }
