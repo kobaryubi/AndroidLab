@@ -48,9 +48,9 @@ class MainActivity: ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            CoursesApp(
-                modifier = Modifier.statusBarsPadding().padding(8.dp)
-            )
+            Surface(modifier = Modifier.fillMaxSize().statusBarsPadding().padding(8.dp)) {
+                CoursesApp()
+            }
         }
     }
 }
