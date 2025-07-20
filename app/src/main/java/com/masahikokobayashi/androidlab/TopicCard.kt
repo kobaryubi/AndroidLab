@@ -3,11 +3,15 @@ package com.masahikokobayashi.androidlab
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -32,12 +36,31 @@ fun TopicCard(
                     .height(68.dp),
                 contentScale = ContentScale.Crop
             )
-            Column {
+            Column(
+                modifier = Modifier
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                    )
+            ) {
                 Text(
                     text = stringResource(topic.stringResourceId),
+                    style = MaterialTheme.typography.bodyMedium,
                 )
-                Row {
-
+                Spacer(modifier = Modifier.height(8.dp))
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_grain),
+                        contentDescription = null,
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = topic.availableCourses.toString(),
+                        style = MaterialTheme.typography.labelMedium,
+                    )
                 }
             }
         }
