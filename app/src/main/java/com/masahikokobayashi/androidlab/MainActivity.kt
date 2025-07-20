@@ -47,7 +47,7 @@ class MainActivity: ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            AffirmationsApp()
+            CoursesApp()
         }
     }
 }
