@@ -7,7 +7,10 @@ import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.tooling.preview.Preview
+import com.masahikokobayashi.androidlab.data.Datasource
 import com.masahikokobayashi.androidlab.model.Dog
+import com.masahikokobayashi.androidlab.ui.theme.woof.WoofTheme
 
 @Composable
 fun DogItem(
@@ -30,5 +33,17 @@ fun DogItem(
                 dogAge = dog.age,
             )
         }
+    }
+}
+
+@Preview
+@Composable
+private fun DogItemPreview() {
+    val dog = Datasource.dogs[0]
+
+    WoofTheme {
+        DogItem(
+            dog = dog,
+        )
     }
 }
