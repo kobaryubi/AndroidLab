@@ -13,7 +13,12 @@ import androidx.compose.ui.res.dimensionResource
 
 @Composable
 fun WoofApp(modifier: Modifier = Modifier) {
-    Scaffold(modifier = modifier) { innerPadding ->
+    Scaffold(
+        topBar = {
+            WoofTopAppBar()
+        },
+        modifier = modifier
+    ) { innerPadding ->
         LazyColumn(contentPadding = innerPadding) {
             items(Datasource.dogs) { dog ->
                 DogItem(
