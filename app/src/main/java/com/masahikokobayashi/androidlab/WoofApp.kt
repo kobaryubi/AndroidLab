@@ -17,14 +17,17 @@ fun WoofApp(modifier: Modifier = Modifier) {
         topBar = {
             WoofTopAppBar()
         },
-        modifier = modifier
+        modifier = modifier,
     ) { innerPadding ->
-        LazyColumn(contentPadding = innerPadding) {
+        LazyColumn(
+            contentPadding = innerPadding,
+        ) {
             items(Datasource.dogs) { dog ->
                 DogItem(
-                    dog = dog, modifier = Modifier.padding(
+                    dog = dog,
+                    modifier = Modifier.padding(
                         dimensionResource(R.dimen.padding_small)
-                    )
+                    ),
                 )
             }
         }
