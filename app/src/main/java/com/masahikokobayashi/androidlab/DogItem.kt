@@ -1,5 +1,6 @@
 package com.masahikokobayashi.androidlab
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,10 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.tooling.preview.Preview
-import com.masahikokobayashi.androidlab.data.Datasource
 import com.masahikokobayashi.androidlab.model.Dog
-import com.masahikokobayashi.androidlab.ui.theme.woof.WoofTheme
 
 @Composable
 fun DogItem(
@@ -27,35 +25,36 @@ fun DogItem(
     Card(
         modifier = modifier
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(dimensionResource(R.dimen.padding_small))
-        ) {
-            DogIcon(
-                dogIcon = dog.imageResourceId,
-            )
-            DogInformation(
-                dogName = dog.name,
-                dogAge = dog.age,
-            )
-            Spacer(modifier = Modifier.weight(1f))
-            DogItemButton(
-                expanded = expanded,
-                onClick = { /*TODO*/ }
-            )
+        Column {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(dimensionResource(R.dimen.padding_small))
+            ) {
+                DogIcon(
+                    dogIcon = dog.imageResourceId,
+                )
+                DogInformation(
+                    dogName = dog.name,
+                    dogAge = dog.age,
+                )
+                Spacer(modifier = Modifier.weight(1f))
+                DogItemButton(
+                    expanded = expanded,
+                    onClick = { expanded = !expanded },
+                )
+            }
+            if (expanded) {
+                DogHobby(
+                    dogHobby = dog.hobbies,
+                    modifier = Modifier.padding(
+                        start = dimensionResource(R.dimen.padding_medium),
+                        top = dimensionResource(R.dimen.padding_small),
+                        end = dimensionResource(R.dimen.padding_medium),
+                        bottom = dimensionResource(R.dimen.padding_medium)
+                    )
+                )
+            }
         }
-    }
-}
-
-@Preview
-@Composable
-private fun DogItemPreview() {
-    val dog = Datasource.dogs[0]
-
-    WoofTheme {
-        DogItem(
-            dog = dog,
-        )
     }
 }
