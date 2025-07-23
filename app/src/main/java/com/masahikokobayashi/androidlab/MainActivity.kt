@@ -37,6 +37,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
+import com.masahikokobayashi.androidlab.ui.GameScreen
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
 import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
@@ -51,7 +52,9 @@ class MainActivity : ComponentActivity() {
             UnscrambleTheme {
                Surface(
                    modifier = Modifier.fillMaxSize(),
-               ) {}
+               ) {
+                   GameScreen()
+               }
             }
         }
     }
