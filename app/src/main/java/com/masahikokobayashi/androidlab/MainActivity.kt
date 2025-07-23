@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
-import com.masahikokobayashi.androidlab.ui.theme.woof.WoofTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,15 +46,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-
-            WoofTheme {
-                Surface(
-                    modifier = Modifier
-                        .fillMaxSize()
-                ) {
-                    WoofApp()
-                }
-            }
         }
     }
 }
