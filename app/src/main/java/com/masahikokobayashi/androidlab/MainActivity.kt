@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
+import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +47,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
+
+            UnscrambleTheme {
+               Surface(
+                   modifier = Modifier.fillMaxSize(),
+               ) {}
+            }
         }
     }
 }

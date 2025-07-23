@@ -20,3 +20,14 @@ fun LemonadeTheme(
         content = content
     )
 }
+
+@Composable
+fun UnscrambleTheme(
+    content: @Composable () -> Unit
+) {
+    MaterialTheme(
+        typography = UnscrambleTypography,
+        shapes = UnscrambleShapes,
+        content = content
+    )
+}
