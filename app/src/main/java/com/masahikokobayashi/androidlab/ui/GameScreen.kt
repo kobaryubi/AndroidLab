@@ -1,15 +1,17 @@
 package com.masahikokobayashi.androidlab.ui
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme.typography
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
@@ -27,7 +29,11 @@ fun GameScreen(
     val gameUiState by gameViewModel.uiState.collectAsState()
     val mediumPadding = dimensionResource(R.dimen.padding_medium)
 
-    Column(modifier = modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier.padding(mediumPadding),
+    ) {
         Text(
             text = stringResource(R.string.app_name),
             style = typography.titleLarge
@@ -40,16 +46,27 @@ fun GameScreen(
             onKeyboardDone = { gameViewModel.checkUserGuess() },
             modifier = Modifier
                 .fillMaxWidth()
-                .wrapContentHeight()
                 .padding(mediumPadding)
         )
-        Column {
+        Column(
+            verticalArrangement = Arrangement.spacedBy(mediumPadding),
+            modifier = Modifier.padding(mediumPadding),
+        ) {
             Button(
-                onClick = {gameViewModel.checkUserGuess()},
+                onClick = { gameViewModel.checkUserGuess() },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
                     text = stringResource(R.string.submit),
+                    fontSize = 16.sp,
+                )
+            }
+            OutlinedButton(
+                onClick = {},
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = stringResource(R.string.skip),
                     fontSize = 16.sp,
                 )
             }
