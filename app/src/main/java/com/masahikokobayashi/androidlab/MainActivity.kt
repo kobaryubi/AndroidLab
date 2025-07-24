@@ -39,10 +39,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
-import com.masahikokobayashi.androidlab.ui.GameScreen
+import com.masahikokobayashi.androidlab.data.Datasource
+import com.masahikokobayashi.androidlab.ui.DessertClickerApp
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
-import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
 
 private const val TAG = "MainActivity"
 
@@ -90,7 +90,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .fillMaxSize()
                         .statusBarsPadding()
-                ) {}
+                ) {
+                    DessertClickerApp(
+                        desserts = Datasource.desserts
+                    )
+                }
             }
         }
     }
