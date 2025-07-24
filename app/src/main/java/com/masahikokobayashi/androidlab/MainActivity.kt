@@ -46,6 +46,8 @@ import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
 import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
 
+private const val TAG = "MainActivity"
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,15 +55,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            UnscrambleTheme {
-               Surface(
-                   modifier = Modifier.fillMaxSize()
-                       .statusBarsPadding()
-                       .verticalScroll(rememberScrollState())
-                       .safeDrawingPadding(),
-               ) {
-                   GameScreen()
-               }
+            AndroidLabTheme {
+                Surface(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .statusBarsPadding()
+                ) {}
             }
         }
     }
