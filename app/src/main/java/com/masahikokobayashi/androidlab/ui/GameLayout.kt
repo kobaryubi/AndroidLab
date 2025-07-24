@@ -1,10 +1,15 @@
 package com.masahikokobayashi.androidlab.ui
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.MaterialTheme.shapes
 import androidx.compose.material3.MaterialTheme.typography
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -32,6 +37,24 @@ fun GameLayout(modifier: Modifier = Modifier) {
                 text = stringResource(R.string.instructions),
                 textAlign = TextAlign.Center,
                 style = typography.titleMedium,
+            )
+            OutlinedTextField(
+                value = "",
+                singleLine = true,
+                shape = shapes.large,
+                onValueChange = {},
+                label = {
+                    Text(
+                        stringResource(R.string.enter_your_word)
+                    )
+                },
+                isError = false,
+                modifier = Modifier.fillMaxWidth(),
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = colorScheme.surface,
+                    unfocusedContainerColor = colorScheme.surface,
+                    disabledContainerColor = colorScheme.surface,
+                )
             )
         }
     }
