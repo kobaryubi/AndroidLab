@@ -32,7 +32,9 @@ import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
 fun GameLayout(
     currentScrambledWord: String,
     userGuess: String,
+    isGuessError: Boolean,
     onUserGuessChanged: (String) -> Unit,
+    onKeyboardDone: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val mediumPadding = dimensionResource(R.dimen.padding_medium)
@@ -74,7 +76,7 @@ fun GameLayout(
                         stringResource(R.string.enter_your_word)
                     )
                 },
-                isError = false,
+                isError = isGuessError,
                 modifier = Modifier.fillMaxWidth(),
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = colorScheme.surface,
@@ -85,7 +87,7 @@ fun GameLayout(
                     imeAction = ImeAction.Done
                 ),
                 keyboardActions = KeyboardActions(
-                    onDone = {}
+                    onDone = { onKeyboardDone() }
                 )
             )
         }
@@ -99,7 +101,9 @@ private fun GameLayoutPreview() {
         GameLayout(
             currentScrambledWord = "scrambleun",
             userGuess = "",
-            onUserGuessChanged = {}
+            isGuessError = false,
+            onUserGuessChanged = {},
+            onKeyboardDone = {},
         )
     }
 }
