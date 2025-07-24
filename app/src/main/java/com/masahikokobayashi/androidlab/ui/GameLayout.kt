@@ -33,6 +33,7 @@ fun GameLayout(
     currentScrambledWord: String,
     userGuess: String,
     isGuessError: Boolean,
+    wordCount: Int,
     onUserGuessChanged: (String) -> Unit,
     onKeyboardDone: () -> Unit,
     modifier: Modifier = Modifier,
@@ -49,7 +50,7 @@ fun GameLayout(
             modifier = Modifier.padding(mediumPadding)
         ) {
             Text(
-                text = stringResource(R.string.word_count, 0),
+                text = stringResource(R.string.word_count, wordCount),
                 style = typography.titleMedium,
                 color = colorScheme.onPrimary,
                 modifier = Modifier
@@ -104,6 +105,7 @@ private fun GameLayoutPreview() {
             currentScrambledWord = "scrambleun",
             userGuess = "",
             isGuessError = false,
+            wordCount = 1,
             onUserGuessChanged = {},
             onKeyboardDone = {},
         )
