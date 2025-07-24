@@ -29,7 +29,10 @@ import com.masahikokobayashi.androidlab.R
 import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
 
 @Composable
-fun GameLayout(modifier: Modifier = Modifier) {
+fun GameLayout(
+    currentScrambledWord: String,
+    modifier: Modifier = Modifier,
+) {
     val mediumPadding = dimensionResource(R.dimen.padding_medium)
 
     Card(
@@ -45,13 +48,14 @@ fun GameLayout(modifier: Modifier = Modifier) {
                 text = stringResource(R.string.word_count, 0),
                 style = typography.titleMedium,
                 color = colorScheme.onPrimary,
-                modifier = Modifier.clip(shapes.medium)
+                modifier = Modifier
+                    .clip(shapes.medium)
                     .background(colorScheme.surfaceTint)
                     .padding(horizontal = 10.dp, vertical = 4.dp)
                     .align(alignment = Alignment.End)
             )
             Text(
-                text = "scrambleun",
+                text = currentScrambledWord,
                 style = typography.displayMedium
             )
             Text(
@@ -90,6 +94,8 @@ fun GameLayout(modifier: Modifier = Modifier) {
 @Composable
 private fun GameLayoutPreview() {
     UnscrambleTheme {
-        GameLayout()
+        GameLayout(
+            currentScrambledWord = "scrambleun"
+        )
     }
 }
