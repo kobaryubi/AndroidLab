@@ -31,6 +31,7 @@ import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
 @Composable
 fun GameLayout(
     currentScrambledWord: String,
+    userGuess: String,
     onUserGuessChanged: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -64,7 +65,7 @@ fun GameLayout(
                 style = typography.titleMedium,
             )
             OutlinedTextField(
-                value = "",
+                value = userGuess,
                 singleLine = true,
                 shape = shapes.large,
                 onValueChange = onUserGuessChanged,
@@ -97,6 +98,7 @@ private fun GameLayoutPreview() {
     UnscrambleTheme {
         GameLayout(
             currentScrambledWord = "scrambleun",
+            userGuess = "",
             onUserGuessChanged = {}
         )
     }
