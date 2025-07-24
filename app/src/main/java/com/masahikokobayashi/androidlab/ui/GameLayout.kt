@@ -72,9 +72,11 @@ fun GameLayout(
                 shape = shapes.large,
                 onValueChange = onUserGuessChanged,
                 label = {
-                    Text(
-                        stringResource(R.string.enter_your_word)
-                    )
+                    if (isGuessError) {
+                        Text(stringResource(R.string.wrong_guess))
+                    } else {
+                        Text(stringResource(R.string.enter_your_word))
+                    }
                 },
                 isError = isGuessError,
                 modifier = Modifier.fillMaxWidth(),
