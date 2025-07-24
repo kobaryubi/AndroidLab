@@ -31,6 +31,7 @@ import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
 @Composable
 fun GameLayout(
     currentScrambledWord: String,
+    onUserGuessChanged: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val mediumPadding = dimensionResource(R.dimen.padding_medium)
@@ -66,7 +67,7 @@ fun GameLayout(
                 value = "",
                 singleLine = true,
                 shape = shapes.large,
-                onValueChange = {},
+                onValueChange = onUserGuessChanged,
                 label = {
                     Text(
                         stringResource(R.string.enter_your_word)
@@ -95,7 +96,8 @@ fun GameLayout(
 private fun GameLayoutPreview() {
     UnscrambleTheme {
         GameLayout(
-            currentScrambledWord = "scrambleun"
+            currentScrambledWord = "scrambleun",
+            onUserGuessChanged = {}
         )
     }
 }
