@@ -6,13 +6,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -39,10 +41,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
-import com.masahikokobayashi.androidlab.data.Datasource
-import com.masahikokobayashi.androidlab.ui.DessertClickerApp
+import com.masahikokobayashi.androidlab.ui.GameScreen
 import com.masahikokobayashi.androidlab.ui.theme.AndroidLabTheme
 import com.masahikokobayashi.androidlab.ui.theme.LemonadeTheme
+import com.masahikokobayashi.androidlab.ui.theme.UnscrambleTheme
 
 private const val TAG = "MainActivity"
 
@@ -85,15 +87,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            AndroidLabTheme {
+            UnscrambleTheme {
                 Surface(
-                    modifier = Modifier
-                        .fillMaxSize()
+                    modifier = Modifier.fillMaxSize()
                         .statusBarsPadding()
+                        .verticalScroll(rememberScrollState())
+                        .safeDrawingPadding()
                 ) {
-                    DessertClickerApp(
-                        desserts = Datasource.desserts
-                    )
+                    GameScreen()
                 }
             }
         }
