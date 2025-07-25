@@ -101,36 +101,6 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TaskCompleted(
-    modifier: Modifier = Modifier
-) {
-    val painter = painterResource(R.drawable.ic_task_completed)
-
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = modifier
-    ) {
-        Image(
-            painter = painter,
-            contentDescription = null,
-        )
-        Text(
-            text = stringResource(R.string.all_task_completed),
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(
-                top = 24.dp,
-                bottom = 8.dp,
-            )
-        )
-        Text(
-            text = stringResource(R.string.nice_work),
-            fontSize = 16.sp,
-        )
-    }
-}
-
-@Composable
 fun JetpackComposeTutorial(
     title: String,
     shortDescription: String,
@@ -294,14 +264,6 @@ fun JetpackComposeTutorialPreview() {
             longDescription = stringResource(R.string.compose_long_desc),
             imagePainter = painterResource(R.drawable.bg_compose_background),
         )
-    }
-}
-
-@Preview
-@Composable
-fun TaskCompletedPreview() {
-    AndroidLabTheme {
-        TaskCompleted()
     }
 }
 
