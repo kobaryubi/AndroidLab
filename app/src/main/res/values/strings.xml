@@ -80,4 +80,5 @@
     <string name="wrong_guess">Wrong Guess!</string>
     <string name="dessert_sold">Desserts sold</string>
     <string name="total_revenue">Total Revenue</string>
+    <string name="share">Share</string>
 </resources>
