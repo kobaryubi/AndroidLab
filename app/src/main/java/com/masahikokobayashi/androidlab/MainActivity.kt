@@ -87,16 +87,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            UnscrambleTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize()
-                        .statusBarsPadding()
-                        .verticalScroll(rememberScrollState())
-                        .safeDrawingPadding()
-                ) {
-                    GameScreen()
-                }
-            }
+            // UnscrambleTheme {
+            //     Surface(
+            //         modifier = Modifier.fillMaxSize()
+            //             .statusBarsPadding()
+            //             .verticalScroll(rememberScrollState())
+            //             .safeDrawingPadding()
+            //     ) {
+            //         GameScreen()
+            //     }
+            // }
         }
     }
 }
