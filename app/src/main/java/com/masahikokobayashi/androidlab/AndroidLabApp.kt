@@ -12,11 +12,28 @@ object First
 @Serializable
 object Second
 
+@Serializable
+object Third
+
 @Composable
 fun AndroidLabApp() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = First) {
-        composable<First> { FirstScreen() }
-        composable<Second> { SecondScreen() }
+        composable<First> {
+            FirstScreen {
+                navController.navigate(Second)
+            }
+        }
+        composable<Second> {
+            SecondScreen(
+                navigateToFirstScreen = {},
+                navigateToThirdScreen = {},
+            )
+        }
+        composable<Third> {
+            ThirdScreen {
+                navController.navigate(First)
+            }
+        }
     }
 }
