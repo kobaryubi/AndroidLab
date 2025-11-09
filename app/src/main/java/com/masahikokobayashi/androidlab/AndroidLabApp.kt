@@ -26,8 +26,12 @@ fun AndroidLabApp() {
         }
         composable<Second> {
             SecondScreen(
-                navigateToFirstScreen = {},
-                navigateToThirdScreen = {},
+                navigateToFirstScreen = {
+                    navController.navigate(First)
+                },
+                navigateToThirdScreen = {
+                    navController.navigate(Third)
+                },
             )
         }
         composable<Third> {

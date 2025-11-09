@@ -30,7 +30,7 @@ fun SecondScreen(
         Button(onClick = {
             navigateToFirstScreen()
         }) {
-            Text(text = "Go to Second Screen")
+            Text(text = "Go to First Screen")
         }
         Button(onClick = {
             navigateToThirdScreen()
