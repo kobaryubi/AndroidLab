@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.com.google.dagger.hilt.android)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.org.jetbrains.kotlinx.serialization.json)
     ksp(libs.com.google.dagger.hilt.android.compiler)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
