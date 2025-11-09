@@ -134,27 +134,6 @@ fun JetpackComposeTutorial(
 }
 
 @Composable
-fun Greeting(name: String, from: String, modifier: Modifier = Modifier) {
-    Surface(color = Color.Cyan) {
-        Column(modifier = modifier) {
-            Text(
-                text = "Hello $name!",
-                fontSize = 100.sp,
-                lineHeight = 116.sp,
-                textAlign = TextAlign.Center
-            )
-            Text(
-                text = from,
-                fontSize = 36.sp,
-                modifier = Modifier
-                    .padding(16.dp)
-                    .align(alignment = Alignment.End)
-            )
-        }
-    }
-}
-
-@Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
     Box(modifier) {
